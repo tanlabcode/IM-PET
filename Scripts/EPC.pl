@@ -1,0 +1,12 @@
+$PATH=shift;
+system("mkdir Result");
+#print "select promoters\n";
+system("perl $PATH/SelectPromoter_1/SelectPro_new.pl $PATH");
+print "compute DIS\n";
+system("cut -f 4 all_pairs.txt > Result/dis-result.txt");
+print "compute EPC\n";
+#system("perl $PATH/LiftOver_3/ab.pl");
+system("perl $PATH/SelectPromoter_1/all.pl");
+#system("/opt/R/2.11.1/bin/Rscript $PATH/SelectPromoter_1/csi.R");
+system("python $PATH/SelectPromoter_1/cor.py");
+#print "step 1 done\n";

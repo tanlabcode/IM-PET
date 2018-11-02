@@ -1,0 +1,40 @@
+import math
+import re
+
+def average(x):
+    return sum(x)/len(x)
+
+def corr(x,y):
+    n=len(x)
+    avg_x=average(x)
+    avg_y=average(y)
+    diffprod=0
+    xdiff2=0
+    ydiff2=0
+    for idx in range(n):
+        xdiff=x[idx]-avg_x
+        ydiff=y[idx]-avg_y
+        diffprod+=xdiff*ydiff
+        xdiff2+=xdiff*xdiff
+        ydiff2+=ydiff*ydiff
+    q=xdiff2*ydiff2
+    if q==0:
+        return -1
+    else:
+        return diffprod/math.sqrt(q)
+
+#main
+A=open('all_crm_csi.txt','r')
+B=open('all_pairs.txt','r')
+C=open('Result/epc-result.txt','w')
+
+a=A.readline()
+while(a):
+    b=B.readline()
+    aa=re.split('\s+',a)
+    bb=re.split('\s+',b)
+    ai=map(float,aa[0:14])
+    bi=map(float,bb[7:21])
+    cc=corr(ai,bi)
+    print >> C, cc
+    a=A.readline()

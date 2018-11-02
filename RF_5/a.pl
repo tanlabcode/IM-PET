@@ -1,0 +1,27 @@
+open(A,"out.txt");
+#$a=(split(/\./,$ARGV[0]))[0];
+#$a=$a.".n2.txt";
+open(B,">out.n2.txt");
+open(C,"all-tss.txt");
+while(<C>){
+    $n=(split(/\s+/,$_))[1];
+    @p=();
+    @s=();
+    for($i=1;$i<=$n;$i++){
+	$l=<A>;
+	chomp($l);
+	push(@p,$l);
+	$ss=(split(/\s+/,$l))[0];
+	push(@s,$ss);
+    }
+    @sort=sort{$b<=>$a}@s;
+    #@sort=sort{$a<=>$b}@s;
+    for($i=0;$i<$n;$i++){
+	for($j=1;$j<=$n;$j++){
+	    if($s[$i]==$sort[$j-1]){
+		print B "$p[$i]\t$j\n";
+		last;
+	    }
+	}
+    }
+}
