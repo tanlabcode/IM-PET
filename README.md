@@ -18,9 +18,7 @@ export CLASSPATH=/path/to/weka.jar:$CLASSPATH
 Before running IM-PET, users need to make sure that third-party software are runnable. To check this, one can type in the following command lines under the IM-PET folder:
 	
 	./LiftOver_3/liftOver
-	
 	./ALF_EVO_4/alf –h
-	
 	java weka.classifiers.trees.RandomForest
 
 <strong>II. Preparation of the input files</strong>
@@ -37,5 +35,6 @@ Before running IM-PET, users need to make sure that third-party software are run
 A set of example files are included in the folder “INPUT_example”.
 
 <strong>III. Usage:</strong>
-
+```
 perl IM-PET.pl -p [Path to IM-PET] -e [Enhancer positions] -s [Enhancer signals] -x [Expression] 
+```
