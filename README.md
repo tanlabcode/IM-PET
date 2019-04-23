@@ -12,10 +12,15 @@ https://hub.docker.com/r/hebing8812/im-pet
 	Python v2.6.6.
 
 IM-PET uses three third-party helper software, LiftOver, ALF v1.0, and Weka. We have included the executable files of LiftOver and ALF v1.0 in the package. Weka software package has been downloaded under IM-PET folder. To use Weka, users need to first set correct java class path by typing in:
+
 export CLASSPATH=/path/to/weka.jar:$CLASSPATH 
+
 Before running IM-PET, users need to make sure that third-party software are runnable. To check this, one can type in the following command lines under the IM-PET folder:
+	
 	./LiftOver_3/liftOver
+	
 	./ALF_EVO_4/alf –h
+	
 	java weka.classifiers.trees.RandomForest
 
 <strong>II. Preparation of the input files</strong>
