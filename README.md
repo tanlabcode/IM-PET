@@ -4,7 +4,7 @@ IM-PET Docker is now available at
 
 https://hub.docker.com/r/hebing8812/im-pet
 
-I. Prerequisite Software for IM-PET:
+##I. Prerequisite Software for IM-PET:
 	To run IM-PET, following software are required, and the recommended versions are listed:
 	Perl v5.10.1 built for x86_64 Linux system
 	Java v1.6.0_45
@@ -17,7 +17,7 @@ Before running IM-PET, users need to make sure that third-party software are run
 	./ALF_EVO_4/alf –h
 	java weka.classifiers.trees.RandomForest
 
-II. Preparation of the input files
+##II. Preparation of the input files
 1) A tab-delineate file indicate the enhancer positions. 
    Format: [chr]\t[enhancer center position]\t[enhancer score]
 2) A tab-delineate file indicate the enhancer signals in genome-wide.
@@ -29,5 +29,5 @@ II. Preparation of the input files
 
 A set of example files are included in the folder “INPUT_example”.
 
-III. Usage:
+##III. Usage:
 perl IM-PET.pl -p [Path to IM-PET] -e [Enhancer positions] -s [Enhancer signals] -x [Expression] 
